@@ -1,0 +1,19 @@
+name: GithubPackages-Docker
+description: Deploy and docker image to the github package repository
+
+inputs:
+  repo-token:
+    description: Access token which is used to deploy the image to the repository. I advise to use GITHUB_TOKEN
+    required: true
+  
+  image-name:
+    description: Name for the docker image
+    required: true
+
+outputs:
+  imageUrl:
+    description: This can be used when deploying
+
+runs:
+  using: node12
+  main: index.js
