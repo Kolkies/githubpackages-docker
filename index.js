@@ -10,15 +10,7 @@ const run = async () => {
 
   const githubRepo = process.env.GITHUB_REPOSITORY.toLowerCase();
 
-  let tag = "";
-
-  await exec("git describe --always --abbrev --tags --long", "", {
-    listeners: {
-      stdout: (data) => {
-        tag += data.toString();
-      }
-    }
-  });
+  const tag = process.env.GITHUB_SHA.substring(0, 7);
 
   const imageText = `docker.pkg.github.com/${githubRepo}/${imageName}`;
 
