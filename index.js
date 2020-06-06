@@ -10,7 +10,7 @@ const run = async () => {
 
   const githubRepo = process.env.GITHUB_REPOSITORY.toLowerCase();
 
-  const tag = "";
+  let tag = "";
 
   await exec("git describe --always --abbrev --tags --long", "", {
     listeners: {
