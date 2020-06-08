@@ -22,6 +22,7 @@ const run = async () => {
 
 
   await exec(`docker push ${imageText}:${tag}`).catch(error => core.setFailed(error));
+  await exec(`docker push ${imageText}:latest`).catch(error => core.setFailed(error));
 
   core.setOutput("url", `${imageText}:${tag}`);
 }
