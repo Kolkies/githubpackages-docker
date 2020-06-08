@@ -16,9 +16,9 @@ const run = async () => {
 
   await exec(`docker login docker.pkg.github.com -u ${repoUser} -p ${githubToken}`).catch(error => core.setFailed(error));
 
-  await exec(`docker build -t ${imageText}:${tag} .`).catch(error => core.setFailed(error));
+  await exec(`docker build -t ${imageText}:${tag} -t ${imageText}:latest .`).catch(error => core.setFailed(error));
 
-  await exec(`docker tag ${imageText}:${tag} ${imageName}:latest`).catch(error => core.setFailed(error));
+  // await exec(`docker tag ${imageText}:${tag} ${imageName}:latest`).catch(error => core.setFailed(error));
 
 
   await exec(`docker push ${imageText}:${tag}`).catch(error => core.setFailed(error));
