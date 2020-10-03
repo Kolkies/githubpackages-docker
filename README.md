@@ -1,3 +1,7 @@
+# DISCONTINUED
+# PLEASE USE ANOTHER PACKAGE:
+## https://github.com/elgohr/Publish-Docker-Github-Action
+
 # Github Packages Docker
 
 This action deploys an docker image to the github package registy
